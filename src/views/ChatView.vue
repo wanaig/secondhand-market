@@ -196,8 +196,8 @@ onMounted(scrollToBottom)
 .chat-view {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 32px 32px 0;
-  height: calc(100vh - 80px - 80px);
+  padding: 32px 32px 32px;
+  height: calc(100vh - 80px - 80px - 32px);
   min-height: 0;
 
   &__container {
@@ -220,6 +220,8 @@ onMounted(scrollToBottom)
   border-right: 1px solid $cream-300;
   display: flex;
   flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
 
   &__head {
     padding: 20px 18px 14px;
@@ -561,8 +563,8 @@ onMounted(scrollToBottom)
 
 @media (max-width: 768px) {
   .chat-view {
-    padding: 16px 0 0;
-    height: calc(100vh - 64px);
+    padding: 16px 0 16px;
+    height: calc(100vh - 64px - 16px);
 
     &__container {
       border-radius: 0;
