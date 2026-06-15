@@ -178,7 +178,7 @@ onMounted(loadItem)
       span { color: $accent-caramel; }
     }
 
-    input, textarea {
+    input[type="text"], textarea {
       width: 100%;
       padding: 12px 16px;
       border-radius: $radius-md;
@@ -192,14 +192,6 @@ onMounted(loadItem)
       font-family: $font-sans;
 
       &:focus { border-color: $ink-800; background: $cream-50; }
-    }
-    input[type="number"] {
-      -moz-appearance: textfield;
-      &::-webkit-outer-spin-button,
-      &::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
     }
     select {
       width: 100%;
@@ -250,6 +242,14 @@ onMounted(loadItem)
     input {
       border: none;
       background: transparent;
+      flex: 1;
+      -moz-appearance: textfield;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
       &:focus { box-shadow: none; border: none; }
     }
   }

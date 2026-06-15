@@ -260,7 +260,6 @@ async function onSubmit() {
     }
 
     input[type="text"],
-    input[type="number"],
     textarea {
       width: 100%;
       padding: 12px 16px;
@@ -279,15 +278,6 @@ async function onSubmit() {
         border-color: $ink-800;
         background: $cream-50;
         box-shadow: 0 0 0 3px rgba(31, 58, 46, 0.08);
-      }
-    }
-
-    input[type="number"] {
-      -moz-appearance: textfield;
-      &::-webkit-outer-spin-button,
-      &::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
       }
     }
 
@@ -359,6 +349,14 @@ async function onSubmit() {
     border: none;
     background: transparent;
     padding: 12px 16px 12px 4px;
+    flex: 1;
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
 
     &:focus {
       box-shadow: none;
