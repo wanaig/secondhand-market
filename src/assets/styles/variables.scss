@@ -1,0 +1,56 @@
+// ============================================
+//  GleanCampus · 拾光集 设计系统变量
+//  Vibe: Editorial Luxury × Soft Structuralism
+// ============================================
+
+// —— 基础色板：奶油暖底 + 深墨绿 + 焦糖橙 ——
+$cream-50:   #FDFBF6;
+$cream-100:  #FAF7F2;
+$cream-200:  #F4EFE6;
+$cream-300:  #ECE4D4;
+$cream-400:  #D9CDB6;
+
+$ink-900:    #14201A;   // 深墨绿主文本
+$ink-800:    #1F3A2E;   // 深墨绿次文本
+$ink-600:    #3F584C;
+$ink-400:    #6B7F73;
+$ink-300:    #97A69C;
+
+$accent-caramel: #C8632B;    // 焦糖橙 主点缀
+$accent-rust:    #A24818;
+$accent-moss:    #5A7A4E;    // 苔藓绿
+$accent-sand:    #E8DCC4;
+
+$danger:     #B23A2A;
+$success:    #5A7A4E;
+
+// —— 圆角 ——
+$radius-xs:  6px;
+$radius-sm:  10px;
+$radius-md:  16px;
+$radius-lg:  24px;
+$radius-xl:  32px;
+$radius-pill: 999px;
+
+// —— 字体 ——
+$font-display: 'DM Serif Display', 'Source Han Serif SC', 'Songti SC', serif;
+$font-sans:    'Plus Jakarta Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+$font-mono:    'JetBrains Mono', 'Menlo', monospace;
+
+// —— 阴影：超柔扩散 ——
+$shadow-soft:    0 4px 24px -8px rgba(20, 32, 26, 0.08);
+$shadow-medium:  0 18px 48px -20px rgba(20, 32, 26, 0.18);
+$shadow-strong:  0 32px 80px -28px rgba(20, 32, 26, 0.28);
+$shadow-inner-light: inset 0 1px 1px rgba(255, 255, 255, 0.6);
+
+// —— 缓动 ——
+$ease-fluid:  cubic-bezier(0.32, 0.72, 0, 1);
+$ease-soft:   cubic-bezier(0.4, 0, 0.2, 1);
+$ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+// —— 断点 ——
+$bp-sm: 640px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+$bp-2xl: 1536px;
