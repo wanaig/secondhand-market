@@ -76,13 +76,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16">
                 <path d="M21 12c0 4-4 7-9 7-1.2 0-2.4-.2-3.5-.5L4 20l1.5-4C4 14.8 3 13.5 3 12c0-4 4-7 9-7s9 3 9 7Z"/>
               </svg>
-              <span>私信卖家</span>
-            </button>
-            <button class="item-detail__contact-link" @click="contactSeller">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-              <span>查看联系方式</span>
+              <span>联系卖家</span>
             </button>
           </div>
 
@@ -93,7 +87,6 @@
               avatar: item.sellerAvatar,
               campus: item.sellerCampus
             }"
-            @contact="contactSeller"
           />
         </div>
       </div>
@@ -115,27 +108,6 @@
         <p>加载中...</p>
       </div>
     </div>
-
-    <!-- 联系卖家弹窗 -->
-    <el-dialog v-model="showContact" width="400px" :show-close="false" class="contact-dialog" align-center>
-      <div class="contact-popup">
-        <h3>联系卖家</h3>
-        <p>请通过以下方式联系卖家完成交易</p>
-        <div class="contact-popup__info">
-          <span class="contact-popup__label">卖家</span>
-          <span>{{ item?.sellerName }}</span>
-        </div>
-        <div class="contact-popup__info">
-          <span class="contact-popup__label">校区</span>
-          <span>{{ item?.sellerCampus }}</span>
-        </div>
-        <div class="contact-popup__info">
-          <span class="contact-popup__label">联系方式</span>
-          <span>{{ item?.sellerContact }}</span>
-        </div>
-        <button class="contact-popup__close" @click="showContact = false">我知道了</button>
-      </div>
-    </el-dialog>
   </div>
 </template>
 
@@ -160,7 +132,6 @@ const cartStore = useCartStore()
 const chatStore = useChatStore()
 
 const item = ref(null)
-const showContact = ref(false)
 
 const isFav = computed(() => item.value ? favStore.isFavorite(item.value.id) : false)
 const isInCart = computed(() => item.value ? cartStore.isInCart(item.value.id) : false)
@@ -190,14 +161,6 @@ function toggleFav() {
     sellerAvatar: item.value.sellerAvatar,
     createdAt: item.value.createdAt
   })
-}
-
-function contactSeller() {
-  if (!userStore.isLoggedIn) {
-    userStore.openLoginDialog()
-    return
-  }
-  showContact.value = true
 }
 
 function addToCart() {
@@ -494,7 +457,7 @@ onMounted(loadItem)
     gap: 10px;
   }
 
-  &__chat, &__contact-link {
+  &__chat {
     display: inline-flex;
     align-items: center;
     gap: 5px;
@@ -580,7 +543,7 @@ onMounted(loadItem)
     gap: 8px;
   }
 
-  &__chat, &__contact-link {
+  &__chat {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -601,11 +564,6 @@ onMounted(loadItem)
   &__chat {
     background: $cream-100;
     &:hover { background: $ink-900; color: $cream-50; }
-  }
-
-  &__contact-link {
-    background: transparent;
-    border: 1px solid $cream-300;
   }
 
   &__cart-btn {
@@ -691,27 +649,6 @@ onMounted(loadItem)
     }
   }
 
-  &__contact-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 16px;
-    border-radius: $radius-pill;
-    background: $cream-100;
-    color: $ink-600;
-    font-size: 12px;
-    font-weight: 500;
-    border: 1px solid $cream-300;
-    cursor: pointer;
-    transition: all .3s $ease-fluid;
-
-    &:hover {
-      background: $ink-900;
-      color: $cream-50;
-      border-color: $ink-900;
-    }
-  }
-
   &__bottom {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -748,61 +685,6 @@ onMounted(loadItem)
     color: $ink-400;
   }
 }
-
-.contact-popup {
-  padding: 8px;
-  text-align: center;
-
-  h3 {
-    font-family: $font-display;
-    font-size: 24px;
-    color: $ink-900;
-    margin-bottom: 8px;
-  }
-  p {
-    font-size: 13px;
-    color: $ink-400;
-    margin-bottom: 24px;
-  }
-
-  &__info {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px 0;
-    border-bottom: 1px solid $cream-300;
-    font-size: 14px;
-    color: $ink-800;
-  }
-  &__label {
-    color: $ink-400;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  &__close {
-    margin-top: 24px;
-    padding: 12px 32px;
-    border-radius: $radius-pill;
-    background: $ink-900;
-    color: $cream-50;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all .3s $ease-fluid;
-
-    &:hover { background: $accent-caramel; }
-  }
-}
-
-:deep(.contact-dialog .el-dialog) {
-  border-radius: $radius-xl;
-  background: $cream-50;
-  box-shadow: $shadow-strong;
-}
-:deep(.contact-dialog .el-dialog__header) { display: none; }
-:deep(.contact-dialog .el-dialog__body) { padding: 32px; }
 
 @media (max-width: 1024px) {
   .item-detail__main { grid-template-columns: 1fr; }
