@@ -67,11 +67,11 @@
                 <img :src="img" alt="" />
                 <button class="publish__img-remove" @click="removeImage(idx)">×</button>
               </div>
-              <label v-if="form.images.length < 9" class="publish__img-add">
-                <input type="file" accept="image/*" @change="onImageSelect" />
+              <div v-if="form.images.length < 9" class="publish__img-add" @click="$refs.fileInput.click()">
+                <input ref="fileInput" type="file" accept="image/*" @change="onImageSelect" style="display:none" />
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M12 5v14M5 12h14"/></svg>
                 <span>添加图片</span>
-              </label>
+              </div>
             </div>
             <p class="publish__hint">最多上传 9 张图片，建议上传实物照片</p>
           </div>
@@ -412,7 +412,6 @@ async function onSubmit() {
 
     &:hover { background: $danger; }
   }
-
   &__img-add {
     width: 100px;
     height: 100px;
@@ -426,14 +425,7 @@ async function onSubmit() {
     cursor: pointer;
     color: $ink-400;
     transition: all .3s $ease-soft;
-    position: relative;
-
-    input[type="file"] {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      cursor: pointer;
-    }
+    box-sizing: border-box;
 
     span { font-size: 10px; }
     &:hover {
