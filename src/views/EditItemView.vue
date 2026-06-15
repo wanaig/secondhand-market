@@ -178,7 +178,7 @@ onMounted(loadItem)
       span { color: $accent-caramel; }
     }
 
-    input, select, textarea {
+    input, textarea {
       width: 100%;
       padding: 12px 16px;
       border-radius: $radius-md;
@@ -193,8 +193,38 @@ onMounted(loadItem)
 
       &:focus { border-color: $ink-800; background: $cream-50; }
     }
+    input[type="number"] {
+      -moz-appearance: textfield;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+    select {
+      width: 100%;
+      padding: 12px 36px 12px 16px;
+      border-radius: $radius-md;
+      border: 1.5px solid $cream-300;
+      background-color: $cream-100;
+      font-size: 14px;
+      color: $ink-900;
+      outline: none;
+      box-sizing: border-box;
+      font-family: $font-sans;
+      cursor: pointer;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7F73' stroke-width='1.5'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 16px;
+      transition: all .3s $ease-soft;
+
+      &:focus { border-color: $ink-800; background-color: $cream-50; }
+    }
     textarea { resize: vertical; min-height: 100px; }
-    select { appearance: none; cursor: pointer; }
   }
 
   &__row {
