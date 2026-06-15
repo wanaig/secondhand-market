@@ -6,7 +6,7 @@
         <div class="hero__left">
           <div class="hero__eyebrow">
             <span class="hero__dot"></span>
-            <span>CAMPUS · SECONDHAND · EST.2025</span>
+            <span>CAMPUS · SECONDHAND · EST.2026</span>
           </div>
           <h1 class="hero__title">
             让校园里的<br />
@@ -230,7 +230,7 @@ const marqueeText = [
   '· 让闲置物品再次流转 ·',
   '✦ 校园 · 二手 · 可持续',
   '· 同学之间的诚信交易 ·',
-  '✦ EST. 2025 / 秋'
+  '✦ EST. 2026 / 秋'
 ]
 
 async function loadHot() {

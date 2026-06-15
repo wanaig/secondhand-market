@@ -143,4 +143,4 @@ $font-mono:    'JetBrains Mono'    // 数据：精确等宽
 
 ---
 
-Made with care for campus life · © 2025 GleanCampus
+Made with care for campus life · © 2026 GleanCampus

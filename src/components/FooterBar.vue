@@ -6,7 +6,7 @@
           <span class="footer__logo-mark">G</span>
           <div>
             <div class="footer__logo-cn">拾光集</div>
-            <div class="footer__logo-en">Campus Secondhand / Est.2025</div>
+            <div class="footer__logo-en">Campus Secondhand / Est.2026</div>
           </div>
         </div>
         <p class="footer__desc">
@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <span>© 2025 GleanCampus · 拾光集 — 校园二手交易平台</span>
+        <span>© 2026 GleanCampus · 拾光集 — 校园二手交易平台</span>
         <span class="footer__divider">·</span>
         <span>Made with <i class="footer__heart">♥</i> for Campus Life</span>
       </div>

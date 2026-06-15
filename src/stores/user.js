@@ -18,8 +18,8 @@ export const useUserStore = defineStore('user', () => {
     const users = JSON.parse(localStorage.getItem(USERS_KEY) || '[]')
     if (users.length === 0) {
       const seeds = [
-        { id: 'u_seed_1', username: 'admin', password: '123456', nickname: '拾光君', campus: '中心校区', avatar: 'https://api.dicebear.com/7.x/lorelei/svg?seed=admin', createTime: '2025-01-01T00:00:00Z' },
-        { id: 'u_seed_2', username: 'demo', password: '123456', nickname: '小拾', campus: '东校区', avatar: 'https://api.dicebear.com/7.x/lorelei/svg?seed=demo', createTime: '2025-01-02T00:00:00Z' }
+        { id: 'u_seed_1', username: 'admin', password: '123456', nickname: '拾光君', campus: '中心校区', avatar: 'https://api.dicebear.com/7.x/lorelei/svg?seed=admin', createTime: '2026-01-01T00:00:00Z' },
+        { id: 'u_seed_2', username: 'demo', password: '123456', nickname: '小拾', campus: '东校区', avatar: 'https://api.dicebear.com/7.x/lorelei/svg?seed=demo', createTime: '2026-01-02T00:00:00Z' }
       ]
       localStorage.setItem(USERS_KEY, JSON.stringify(seeds))
     }

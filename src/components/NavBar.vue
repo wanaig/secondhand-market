@@ -6,7 +6,7 @@
         <span class="navbar__logo-mark">G</span>
         <span class="navbar__logo-text">
           <span class="navbar__logo-cn">拾光集</span>
-          <span class="navbar__logo-en">GleanCampus / Est.2025</span>
+          <span class="navbar__logo-en">GleanCampus / Est.2026</span>
         </span>
       </router-link>
 
