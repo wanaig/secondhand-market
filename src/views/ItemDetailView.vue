@@ -71,15 +71,6 @@
             </button>
           </div>
 
-          <div class="item-detail__actions item-detail__actions--secondary">
-            <button class="item-detail__chat" @click="startChat">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16">
-                <path d="M21 12c0 4-4 7-9 7-1.2 0-2.4-.2-3.5-.5L4 20l1.5-4C4 14.8 3 13.5 3 12c0-4 4-7 9-7s9 3 9 7Z"/>
-              </svg>
-              <span>联系卖家</span>
-            </button>
-          </div>
-
           <!-- 卖家卡片 -->
           <SellerCard
             :seller="{
@@ -87,6 +78,7 @@
               avatar: item.sellerAvatar,
               campus: item.sellerCampus
             }"
+            @contact="startChat"
           />
         </div>
       </div>
@@ -457,25 +449,6 @@ onMounted(loadItem)
     gap: 10px;
   }
 
-  &__chat {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding: 8px 16px;
-    border-radius: $radius-pill;
-    background: $cream-200;
-    font-size: 12px;
-    font-weight: 600;
-    color: $ink-600;
-    cursor: pointer;
-    transition: all .3s $ease-fluid;
-
-    &:hover {
-      background: $ink-900;
-      color: $cream-50;
-    }
-  }
-
   &__cart-btn {
     display: inline-flex;
     align-items: center;
@@ -543,29 +516,6 @@ onMounted(loadItem)
     gap: 8px;
   }
 
-  &__chat {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 16px;
-    border-radius: $radius-pill;
-    font-size: 12px;
-    font-weight: 500;
-    color: $ink-600;
-    cursor: pointer;
-    transition: all .3s $ease-fluid;
-
-    &:hover {
-      background: $cream-200;
-      color: $ink-900;
-    }
-  }
-
-  &__chat {
-    background: $cream-100;
-    &:hover { background: $ink-900; color: $cream-50; }
-  }
-
   &__cart-btn {
     display: inline-flex;
     align-items: center;
@@ -628,26 +578,7 @@ onMounted(loadItem)
     margin-bottom: 28px;
   }
 
-  &__chat {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 16px;
-    border-radius: $radius-pill;
-    background: $cream-100;
-    color: $ink-600;
-    font-size: 12px;
-    font-weight: 500;
-    border: 1px solid $cream-300;
-    cursor: pointer;
-    transition: all .3s $ease-fluid;
 
-    &:hover {
-      background: $accent-caramel;
-      color: $cream-50;
-      border-color: $accent-caramel;
-    }
-  }
 
   &__bottom {
     display: grid;
