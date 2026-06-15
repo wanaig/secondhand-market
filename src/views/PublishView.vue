@@ -68,7 +68,7 @@
                 <button class="publish__img-remove" @click="removeImage(idx)">×</button>
               </div>
               <label v-if="form.images.length < 9" class="publish__img-add">
-                <input type="file" accept="image/*" @change="onImageSelect" hidden />
+                <input type="file" accept="image/*" @change="onImageSelect" />
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M12 5v14M5 12h14"/></svg>
                 <span>添加图片</span>
               </label>
@@ -378,8 +378,6 @@ async function onSubmit() {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
   }
 
   &__img-item {
@@ -428,6 +426,14 @@ async function onSubmit() {
     cursor: pointer;
     color: $ink-400;
     transition: all .3s $ease-soft;
+    position: relative;
+
+    input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
 
     span { font-size: 10px; }
     &:hover {
