@@ -378,6 +378,8 @@ async function onSubmit() {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
 
   &__img-item {
